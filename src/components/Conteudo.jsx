@@ -1,8 +1,5 @@
-import reactLogo from "../assets/react.svg";
 
 export default function Conteudo(props) {
-
-    let reactLogoAlt = "React Logo";
 
   return (
     <>
