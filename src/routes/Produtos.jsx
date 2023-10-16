@@ -3,6 +3,7 @@ import { ListaProduto } from "../components/ListaProdutos";
 import style from "./Produtos.module.css";
 import {AiTwotoneEdit as Editar} from "react-icons/ai"
 import { useEffect, useState } from "react";
+import ModalAction from "../components/ModalAction/ModalAction";
 
 export default function Produtos() {
   document.title = "Lista de Produtos";
@@ -22,10 +23,17 @@ export default function Produtos() {
 
   },[]);
   
+  const [open, setOpen] = useState(false);
+
 
   return (
     <div>
       <h1>Produtos</h1>
+
+      <ModalAction open={open} setClose={setOpen}/>
+
+      <button onClick={()=> setOpen(true)}>OPEN-MODAL</button>
+
 
       <table className={style.tblEstilo}>
         <thead>
