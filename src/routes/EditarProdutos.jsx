@@ -7,7 +7,12 @@ export default function EditarProdutos() {
 
     document.title = "Editar Produtos " + id; 
 
-    const[produto,setProduto] = useState({});
+    const[produto,setProduto] = useState({
+      id:id,
+      nome:'',
+      desc:'',
+      preco:''
+    });
 
     //Criar uma estratégia para recuperar o produto da API-JSON com fetch, utilizando GET:
     useEffect(()=>{
@@ -24,13 +29,8 @@ export default function EditarProdutos() {
       //Destructuring
       const {name,value} = e.target;
 
-      if(name == "nome"){
-        setProduto({[name]:value,"desc":"","preco":""});
-      }else if(name == "desc"){
-        setProduto({"nome":"",[name]:value,"preco":""});
-      }else if(name == "preco"){
-        setProduto({"nome":"","desc":"",[name]:value});
-      }
+      //Setando os dados diretamente no objeto atravé de SPREAD
+      setProduto({...produto,[name]:value});
       
     }
 
@@ -64,6 +64,17 @@ export default function EditarProdutos() {
     </div>
   )
 }
+
+
+
+//2ª FORM DE INPUT COM useState
+// if(name == "nome"){
+//   setProduto({"nome":value,"desc":produto.desc,"preco":produto.preco});
+// }else if(name == "desc"){
+//   setProduto({"nome":produto.nome,"desc":value,"preco":produto.preco});
+// }else if(name == "preco"){
+//   setProduto({"nome":produto.nome,"desc":produto.desc,"preco":value});
+// }
 
 // //1ª FORMA DE INPUT COM useState
 // <form>
