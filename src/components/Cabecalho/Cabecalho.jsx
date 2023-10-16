@@ -5,7 +5,7 @@ export default function Cabecalho() {
 
   const rotaAtual = useLocation();
 
-  
+
   return (
     <>
       <header className="cabecalho">

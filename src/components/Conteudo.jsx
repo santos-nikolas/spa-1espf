@@ -1,5 +1,5 @@
 
-export default function Conteudo(props) {
+export default function Conteudo() {
 
   return (
     <>
@@ -23,8 +23,8 @@ export default function Conteudo(props) {
             consequuntur maiores! Nam vero delectus rerum perspiciatis
             architecto quae beatae voluptates?
           </p>
-          <img src={reactLogo} alt={reactLogoAlt} />
-          <img src={props.viteLogoProps} alt={props.viteLogoAltProps} />
+          {/* <img src={reactLogo} alt={reactLogoAlt} />
+          <img src={props.viteLogoProps} alt={props.viteLogoAltProps} /> */}
         </div>
       </section>
     </>

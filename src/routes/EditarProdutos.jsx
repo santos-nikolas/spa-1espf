@@ -1,9 +1,10 @@
 import { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 
 export default function EditarProdutos() {
 
     const {id} = useParams();
+    const navigation = useNavigate()
 
     document.title = "Editar Produtos " + id; 
 
@@ -34,12 +35,28 @@ export default function EditarProdutos() {
       
     }
 
+    const handleSubmit = (e) =>{
+      e.preventDefault();
+   
+        fetch(`http://localhost:5000/produtos/${id}`,{
+          method:"PUT",
+          headers:{
+            "Content-Type":"application/json"
+          },
+          body: JSON.stringify(produto)
+        })
+        .then((response)=> console.log("Dados alterado com sucesso - STATUS CODE : " + response.status))
+        .catch(error=> console.log(error));
+
+        //Redirect
+        navigation("/produtos");
+    }
 
   return (
     <div>
         <h1>Editar Produtos</h1>
           <div>
-            <form>
+            <form onSubmit={handleSubmit}>
               <fieldset>
                 <legend>Produto Selecionado</legend>
                 <div>
