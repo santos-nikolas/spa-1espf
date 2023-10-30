@@ -1,10 +1,37 @@
 .modal{
-    background-color: rgba($color: #000000, $alpha: 0.8);
+    background-color: rgba(0,0,0,0.8);
     width: 100%;
     height: 100%;
     position: fixed;
     top: 0px;
     left: 0;
-    z-index: 10000;
+    z-index: 1000;
     color: #fff;
+}
+
+form{
+    width: 90%;
+    margin: 0 auto;
+}
+
+.closeModal{
+    cursor: pointer;
+    float: right;
+    font-size: 1.6rem;
+    padding: 0 0.5%;
+    color: #000;
+    background-color: #fff;
+    border-radius: 80%;
+    display: block;
+    border:2px solid red;
+    transition: ease-in-out 300ms;
+
+    &:hover{
+        background-color: red;
+        color: #fff;
+    }   
+}
+
+div{
+    clear:both
 }

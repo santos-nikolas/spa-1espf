@@ -1,9 +1,9 @@
 
 export default function MeuComponente(){
     
-    return(
-        <>
-          <h1>Componente Meu Componente</h1>  
-        </>
-    )
+  return(
+      <>
+        <h1>Componente Meu Componente</h1>  
+      </>
+  )
 }
