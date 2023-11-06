@@ -1,7 +1,9 @@
+import { useNavigate } from "react-router-dom";
 
 export default function Home() {
   document.title = "HOME";
   
+  if(sessionStorage.getItem("token-user")){
   return (
     <div>
       <h1>Home</h1>
@@ -14,7 +16,9 @@ export default function Home() {
         </figure>
       </div>
 
-
     </div>
-  )
+  )}else{
+    window.location = "/login";
+    
+  }
 }

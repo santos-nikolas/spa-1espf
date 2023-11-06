@@ -24,7 +24,7 @@ export default function Produtos() {
   
   const [open, setOpen] = useState(false);
 
-
+  if(sessionStorage.getItem("token-user")){
   return (
     <div>
       <h1>Produtos</h1>
@@ -65,4 +65,8 @@ export default function Produtos() {
       </table>
     </div>
   );
+          }else{
+            window.location = "/login";
+            
+          }
 }

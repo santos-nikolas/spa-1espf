@@ -24,7 +24,7 @@ export default function Login() {
         e.preventDefault();
 
         let users;
-
+        let user;
         try {
             const response = await fetch("http://localhost:5000/usuarios");
             users = await response.json();
@@ -35,12 +35,24 @@ export default function Login() {
 
         //REALIZANDO A VALIDAÇÃO DO USUÁRIO.
         for (let x = 0; x < users.length; x++) {
-            const user = users[x];
+                user = users[x];
             //REALIZANDO A COMPARAÇÃO DE FATO!
             if(user.email == usuario.email && user.senha == usuario.senha){
                 alert("Login realizado com SUCESSO!")
+
+                //Criando a autenticação:
+                //Criando o token do usuário
+                const tokenUser = Math.random().toString(16).substring(2) + Math.random().toString(16).substring(2)
+                console.log(tokenUser);
+                
+                //Criando o SessionStorage
+                sessionStorage.setItem("token-user",tokenUser);
+                //Adicionando os dados do Usuário na sessão:
+                sessionStorage.setItem("data-user", JSON.stringify(user));
+
                 //REDIRECIONANDO O USUÁRIO PARA A PÁGINA HOME!
-                navigate("/",{replace: true});
+                navigate("/");
+                return; 
             }
         }
 
