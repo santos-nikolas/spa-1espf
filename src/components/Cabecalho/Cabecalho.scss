@@ -1,10 +1,11 @@
 
 .cabecalho{
     background-color: #999;
-    font-size: 1.5rem;
+    font-size: 2rem;
     font-weight: bold;
-    width: 30%;
+    width: 90%;
     border-radius: 5px;
+    margin: 0 auto;
 
     .btn{
         display: none;
@@ -48,5 +49,10 @@
 
     .active{
         background-color:#27ae60;
+    }
+
+    .welcome{
+        font-size: 1rem;
+        padding: 1px 3px;
     }
 }
