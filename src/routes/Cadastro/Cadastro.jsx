@@ -49,7 +49,7 @@ export default function Cadastro() {
 
                 setTimeout(()=>{
                     navigate("/login");
-                },1000);
+                },2000);
 
             }
             
